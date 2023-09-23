@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .example-container {
+    display: flex;
+    flex: 1 1 auto;
+
+    .example-sidenav {
+      width: 200px;
+      padding: var(--spacing);
+    }
+
+    .example-sidenav-content {
+      padding: var(--spacing);
+
+      .example-button-row .mat-mdc-button-base {
+        margin: 8px 8px 8px 0;
+      }
+    }
+  }
+}
