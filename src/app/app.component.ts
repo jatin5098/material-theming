@@ -1,5 +1,24 @@
 import { Component } from '@angular/core';
 
+export enum ThemeModes {
+  Light = 'light-theme',
+  Dark = 'dark-theme',
+}
+
+export enum ThemePaletts {
+  PurpleGreen = 'purple-green',
+  PinkBlueGrey = 'pink-blue-grey',
+  IndigoPink = 'indigo-pink',
+  DeepPurpleAmber = 'deep-purple-amber',
+  TealLime = 'teal-lime',
+  DeepOrangeBrown = 'deep-orange-brown',
+}
+
+export interface ThemeOptions {
+  text: string;
+  value: ThemePaletts;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,4 +27,42 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'material-theming';
   showFiller = false;
+  themeMode: ThemeModes = ThemeModes.Light;
+  activeTheme: ThemePaletts = ThemePaletts.PinkBlueGrey;
+  themePalette = ThemePaletts;
+  themeOptions: ThemeOptions[] = [
+    { text: 'Purple Green', value: ThemePaletts.PurpleGreen },
+    { text: 'Pink Blue Grey', value: ThemePaletts.PinkBlueGrey },
+    { text: 'Indigo Pink', value: ThemePaletts.IndigoPink },
+    { text: 'Deep Purple Amber', value: ThemePaletts.DeepPurpleAmber },
+    { text: 'Teal Lime', value: ThemePaletts.TealLime },
+    { text: 'Deep Orange Brown', value: ThemePaletts.DeepOrangeBrown },
+  ];
+
+  constructor() {
+    this.toggleTheme(this.activeTheme);
+  }
+
+  toggleTheme(theme: ThemePaletts) {
+    this.activeTheme = theme;
+
+    this.themeOptions.forEach((option) => {
+      document.querySelector('body')?.classList.remove(option.value);
+    });
+
+    document.querySelector('body')?.classList.add(this.activeTheme);
+  }
+
+  toggleThemeMode(): void {
+    if (this.themeMode === ThemeModes.Light) {
+      this.themeMode = ThemeModes.Dark;
+    } else {
+      this.themeMode = ThemeModes.Light;
+    }
+
+    document.querySelector('body')?.classList.remove(ThemeModes.Dark);
+    document.querySelector('body')?.classList.remove(ThemeModes.Light);
+
+    document.querySelector('body')?.classList.add(this.themeMode);
+  }
 }

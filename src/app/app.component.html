@@ -12,17 +12,19 @@
     <span class="flex-auto"></span>
     <button
       mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
+      class="example-icon"
+      aria-label="Example icon-button with theme mode toggle icon"
+      (click)="toggleThemeMode()"
     >
-      <mat-icon>favorite</mat-icon>
+      <mat-icon>brightness_medium</mat-icon>
     </button>
     <button
       mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with share icon"
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with theme toggle icon"
+      [matMenuTriggerFor]="menu"
     >
-      <mat-icon>share</mat-icon>
+      <mat-icon>palette</mat-icon>
     </button>
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize>
@@ -35,12 +37,29 @@
     </mat-drawer>
 
     <div class="example-sidenav-content">
-      <div class="d-f j-a example-button-row">
-        <button mat-button mat-raised-button>Basic</button>
-        <button mat-button mat-raised-button color="primary">Primary</button>
-        <button mat-button mat-raised-button color="accent">Accent</button>
-        <button mat-button mat-raised-button color="warn">Warning</button>
-      </div>
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Button">
+          <app-button-page></app-button-page>
+        </mat-tab>
+        <mat-tab label="Slide Toggle">
+          <app-slide-toggle-page></app-slide-toggle-page>
+        </mat-tab>
+        <mat-tab label="Third">Content 3</mat-tab>
+      </mat-tab-group>
     </div>
   </mat-drawer-container>
 </div>
+<mat-menu #menu="matMenu">
+  <ng-container *ngFor="let theme of themeOptions">
+    <button mat-menu-item (click)="toggleTheme(theme.value)">
+      <mat-icon role="img" color="primary">
+        <ng-container *ngIf="activeTheme === theme.value; else unchecked">
+          radio_button_checked
+        </ng-container>
+      </mat-icon>
+      <span>{{ theme.text }}</span>
+    </button>
+  </ng-container>
+</mat-menu>
+
+<ng-template #unchecked> radio_button_unchecked </ng-template>
