@@ -31,12 +31,15 @@ export class AppComponent {
   activeTheme: ThemePaletts = ThemePaletts.PurpleGreen;
   themePalette = ThemePaletts;
   themeOptions: ThemeOptions[] = [
-    { text: 'Purple Green', value: ThemePaletts.PurpleGreen },
-    { text: 'Pink Blue Grey', value: ThemePaletts.PinkBlueGrey },
-    { text: 'Indigo Pink', value: ThemePaletts.IndigoPink },
-    { text: 'Deep Purple Amber', value: ThemePaletts.DeepPurpleAmber },
-    { text: 'Teal Lime', value: ThemePaletts.TealLime },
-    { text: 'Deep Orange Brown', value: ThemePaletts.DeepOrangeBrown },
+    { text: '(M) Purple Green', value: ThemePaletts.PurpleGreen },
+    { text: '(M) Pink Blue Grey', value: ThemePaletts.PinkBlueGrey },
+    { text: '(M) Indigo Pink', value: ThemePaletts.IndigoPink },
+    {
+      text: '(M) Deep Purple Amber',
+      value: ThemePaletts.DeepPurpleAmber,
+    },
+    { text: '(C) Teal Lime', value: ThemePaletts.TealLime },
+    { text: '(C) Deep Orange Brown', value: ThemePaletts.DeepOrangeBrown },
   ];
 
   constructor() {
