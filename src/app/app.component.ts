@@ -28,7 +28,7 @@ export class AppComponent {
   title = 'material-theming';
   showFiller = false;
   themeMode: ThemeModes = ThemeModes.Light;
-  activeTheme: ThemePaletts = ThemePaletts.PinkBlueGrey;
+  activeTheme: ThemePaletts = ThemePaletts.PurpleGreen;
   themePalette = ThemePaletts;
   themeOptions: ThemeOptions[] = [
     { text: 'Purple Green', value: ThemePaletts.PurpleGreen },
