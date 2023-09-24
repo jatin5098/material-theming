@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="mat-elevation-z8">
     <button
       mat-icon-button
       class="example-icon"
@@ -27,17 +27,35 @@
       <mat-icon>palette</mat-icon>
     </button>
   </mat-toolbar>
-  <mat-drawer-container class="example-container" autosize>
+  <mat-drawer-container class="example-container h-100" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+      <mat-list role="list">
+        <mat-divider></mat-divider>
+        <mat-list-item
+          role="button"
+          (click)="activeTab = 0"
+          [ngClass]="{ active: activeTab == 0 }"
+          >Button</mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          role="button"
+          (click)="activeTab = 1"
+          [ngClass]="{ active: activeTab == 1 }"
+          >Slide Toggle</mat-list-item
+        >
+        <mat-divider></mat-divider>
+      </mat-list>
     </mat-drawer>
 
     <div class="example-sidenav-content">
-      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab-group
+        mat-stretch-tabs="false"
+        mat-align-tabs="start"
+        backgroundColor="accent"
+        [selectedIndex]="activeTab"
+        (selectedIndexChange)="activeTab = $event"
+      >
         <mat-tab label="Button">
           <app-button-page></app-button-page>
         </mat-tab>

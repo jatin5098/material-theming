@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 
 import { ButtonPageComponent } from './button-page/button-page.component';
 import { SlideTogglePageComponent } from './slide-toggle-page/slide-toggle-page.component';
@@ -39,6 +40,7 @@ import { SlideTogglePageComponent } from './slide-toggle-page/slide-toggle-page.
     MatRadioModule,
     MatCardModule,
     MatMenuModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

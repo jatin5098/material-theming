@@ -26,7 +26,6 @@ export interface ThemeOptions {
 })
 export class AppComponent {
   title = 'material-theming';
-  showFiller = false;
   themeMode: ThemeModes = ThemeModes.Light;
   activeTheme: ThemePaletts = ThemePaletts.PurpleGreen;
   themePalette = ThemePaletts;
@@ -41,6 +40,7 @@ export class AppComponent {
     { text: '(C) Teal Lime', value: ThemePaletts.TealLime },
     { text: '(C) Deep Orange Brown', value: ThemePaletts.DeepOrangeBrown },
   ];
+  activeTab = 1;
 
   constructor() {
     this.toggleTheme(this.activeTheme);
