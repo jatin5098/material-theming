@@ -96,7 +96,7 @@ $md-warn: (
   ),
 );
 
-$theme-primary-light: mat.define-palette($md-primary, 500, 700);
+$theme-primary-light: mat.define-palette($md-primary, A700, 700);
 $theme-accent-light: mat.define-palette($md-accent, 700, 900);
 
 $theme-primary-dark: mat.define-palette($md-primary, 200, 700);

@@ -21,6 +21,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ButtonPageComponent } from './button-page/button-page.component';
 import { SlideTogglePageComponent } from './slide-toggle-page/slide-toggle-page.component';
@@ -55,6 +56,7 @@ import { ProgressPageComponent } from './progress-page/progress-page.component';
     MatChipsModule,
     MatProgressBarModule,
     MatSliderModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
