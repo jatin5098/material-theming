@@ -12,6 +12,7 @@ export enum ThemePaletts {
   DeepPurpleAmber = 'deep-purple-amber',
   TealLime = 'teal-lime',
   DeepOrangeBrown = 'deep-orange-brown',
+  BlueGreen = 'blue-green',
 }
 
 export interface ThemeOptions {
@@ -39,6 +40,7 @@ export class AppComponent {
     },
     { text: '(C) Teal Lime', value: ThemePaletts.TealLime },
     { text: '(C) Deep Orange Brown', value: ThemePaletts.DeepOrangeBrown },
+    { text: '(C) Blue Green', value: ThemePaletts.BlueGreen },
   ];
   activeTab = 1;
 
