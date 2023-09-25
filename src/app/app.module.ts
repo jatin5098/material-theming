@@ -18,12 +18,23 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { ButtonPageComponent } from './button-page/button-page.component';
 import { SlideTogglePageComponent } from './slide-toggle-page/slide-toggle-page.component';
+import { ChipsPageComponent } from './chips-page/chips-page.component';
+import { ProgressPageComponent } from './progress-page/progress-page.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonPageComponent, SlideTogglePageComponent],
+  declarations: [
+    AppComponent,
+    ButtonPageComponent,
+    SlideTogglePageComponent,
+    ChipsPageComponent,
+    ProgressPageComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -41,6 +52,9 @@ import { SlideTogglePageComponent } from './slide-toggle-page/slide-toggle-page.
     MatCardModule,
     MatMenuModule,
     MatListModule,
+    MatChipsModule,
+    MatProgressBarModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
