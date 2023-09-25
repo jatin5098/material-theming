@@ -105,7 +105,7 @@ $theme-warn-light: mat.define-palette($md-warn, 800);
 $theme-warn-dark: mat.define-palette($md-warn, 200);
 
 $md-typography: mat.define-typography-config(
-  $font-family: Bitter,
+  $font-family: Quicksand,
 );
 
 $dark-theme: mat.define-dark-theme(
@@ -132,8 +132,28 @@ $light-theme: mat.define-light-theme(
 
 .teal-lime {
   @include mat.all-component-themes($light-theme);
+  @include mat.typography-hierarchy($light-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 400);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 500) !important;
+    }
+  }
 }
 
 .teal-lime.dark-theme {
   @include mat.all-component-themes($dark-theme);
+  @include mat.typography-hierarchy($dark-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 300);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 300) !important;
+    }
+  }
 }

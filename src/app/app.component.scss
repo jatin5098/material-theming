@@ -7,16 +7,8 @@
   overflow: hidden;
 
   .example-container {
-    // display: flex;
-    // flex: 1 1 auto;
-
     .example-sidenav {
       width: 200px;
-      padding: var(--spacing);
-    }
-
-    .example-sidenav-content {
-      // padding: var(--spacing);
     }
   }
 }

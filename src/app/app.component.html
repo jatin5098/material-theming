@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mat-typography">
   <mat-toolbar color="primary" class="mat-elevation-z8">
     <button
       mat-icon-button
@@ -29,11 +29,12 @@
   </mat-toolbar>
   <mat-drawer-container class="example-container h-100" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <mat-list role="list">
+      <mat-list role="list" class="p-0">
         <mat-divider></mat-divider>
         <mat-list-item
           role="button"
           (click)="activeTab = 0"
+          class="selectable-item"
           [ngClass]="{ active: activeTab == 0 }"
           >Button</mat-list-item
         >
@@ -41,6 +42,7 @@
         <mat-list-item
           role="button"
           (click)="activeTab = 1"
+          class="selectable-item"
           [ngClass]="{ active: activeTab == 1 }"
           >Slide Toggle</mat-list-item
         >

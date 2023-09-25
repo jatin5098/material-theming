@@ -132,8 +132,28 @@ $light-theme: mat.define-light-theme(
 
 .indigo-pink {
   @include mat.all-component-themes($light-theme);
+  @include mat.typography-hierarchy($light-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 400);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 400) !important;
+    }
+  }
 }
 
 .indigo-pink.dark-theme {
   @include mat.all-component-themes($dark-theme);
+  @include mat.typography-hierarchy($dark-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 300);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 300) !important;
+    }
+  }
 }

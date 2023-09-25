@@ -105,21 +105,7 @@ $theme-warn-light: mat.define-palette($md-warn, 800);
 $theme-warn-dark: mat.define-palette($md-warn, 200);
 
 $md-typography: mat.define-typography-config(
-  $headline-1:
-    mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
-  $headline-2:
-    mat.define-typography-level(56px, 56px, 300, $letter-spacing: -0.02em),
-  $headline-3:
-    mat.define-typography-level(45px, 48px, 500, $letter-spacing: -0.005em),
-  $headline-4: mat.define-typography-level(34px, 40px, 500),
-  $headline-5: mat.define-typography-level(24px, 32px, 500),
-  $headline-6: mat.define-typography-level(20px, 32px, 500),
-  $subtitle-1: mat.define-typography-level(20px, 28px, 400),
-  $subtitle-2: mat.define-typography-level(18px, 24px, 400),
-  $body-1: mat.define-typography-level(16px, 20px, 300),
-  $body-2: mat.define-typography-level(14px, 20px, 300),
-  $caption: mat.define-typography-level(12px, 16px, 400),
-  $button: mat.define-typography-level(16px, 20px, 400),
+  $font-family: Comfortaa,
 );
 
 $dark-theme: mat.define-dark-theme(
@@ -146,8 +132,28 @@ $light-theme: mat.define-light-theme(
 
 .purple-green {
   @include mat.all-component-themes($light-theme);
+  @include mat.typography-hierarchy($light-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 400);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 400) !important;
+    }
+  }
 }
 
 .purple-green.dark-theme {
   @include mat.all-component-themes($dark-theme);
+  @include mat.typography-hierarchy($dark-theme);
+
+  .active,
+  .selectable-item:hover {
+    background: mat.get-color-from-palette($md-primary, 300);
+
+    .mdc-list-item__primary-text {
+      color: mat.get-contrast-color-from-palette($md-primary, 300) !important;
+    }
+  }
 }
